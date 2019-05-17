@@ -75,6 +75,8 @@ if !empty(glob(plug_vim_file))
   Plug 'h1mesuke/unite-outline'
   Plug 'tsukkee/unite-help'
   Plug 'sgur/unite-qf'
+  Plug 'Shougo/vimfiler.vim'
+  Plug 'Shougo/vinarise.vim'
   call plug#end()
 endif
 " }}}
