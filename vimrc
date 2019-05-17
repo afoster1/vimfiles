@@ -68,6 +68,13 @@ if !empty(glob(plug_vim_file))
   Plug 'tpope/vim-fugitive'
   Plug 'jamessan/vim-gnupg'
   Plug 'lfv89/vim-interestingwords'
+  Plug 'Shougo/unite.vim'
+  Plug 'ujihisa/unite-colorscheme'
+  Plug 'Shougo/neomru.vim'
+  Plug 'tsukkee/unite-tag'
+  Plug 'h1mesuke/unite-outline'
+  Plug 'tsukkee/unite-help'
+  Plug 'sgur/unite-qf'
   call plug#end()
 endif
 " }}}
