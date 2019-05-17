@@ -12,4 +12,10 @@
 :set ignorecase
 :set smartcase
 
+" Swap files and backups are annoying but can save you a lot of trouble.
+" Rather than spread them all around your filesystem, isolate them to a single
+" directory.
+set backupdir=~/tmp
+set directory=~/tmp
+
 " }}}
