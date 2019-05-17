@@ -77,6 +77,11 @@ nmap <Leader>gc :Gcommit<CR>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>gl :Glog<CR>
 nnoremap <leader>gp :Git push<CR>
+" q
+nmap <Leader>q :xa<CR>
+" s
+nmap <Leader>s :wa<CR>
+nmap <Leader>S :SSave<CR>
 " t
 nmap <Leader>t :tabnew<CR>
 nmap <Leader>h :tabprevious<CR>
