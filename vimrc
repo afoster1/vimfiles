@@ -5,7 +5,6 @@ set nocompatible " Don't insist on compatibility with vi.
 " }}}
 
 " Helper Functions {{{
-""" Helpers
 function! EnsureDirExists (dir)
   if !isdirectory(a:dir)
     if exists("*mkdir")
@@ -14,6 +13,25 @@ function! EnsureDirExists (dir)
       echo "Please create directory: " . a:dir
     endif
   endif
+endfunction
+
+function! TabLeft()
+    let tab_number = tabpagenr()
+    if tab_number == 1
+        execute "tabm" tabpagenr('$')
+    else
+        execute "tabm" tab_number - 2
+    endif
+endfunction
+
+function! TabRight()
+    let tab_number = tabpagenr()
+    let last_tab_number = tabpagenr('$')
+    if tab_number == last_tab_number
+        execute "tabm" 0
+    else
+        execute "tabm" tab_number + 1
+    endif
 endfunction
 " }}}
 
@@ -53,9 +71,16 @@ endif
 " }}}
 
 " Keyboard Mappings {{{
+" g
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gc :Gcommit<CR>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>gl :Glog<CR>
 nnoremap <leader>gp :Git push<CR>
+" t
+nmap <Leader>t :tabnew<CR>
+nmap <Leader>h :tabprevious<CR>
+nmap <Leader>l :tabnext<CR>
+nmap <Leader>j :execute TabLeft()<CR>
+nmap <Leader>k :execute TabRight()<CR>
 " }}}
