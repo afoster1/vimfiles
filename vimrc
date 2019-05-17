@@ -47,7 +47,15 @@ endif
 if !empty(glob(plug_vim_file))
   call plug#begin(plug_vim_home)
   Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-fugitive'
   call plug#end()
 endif
 " }}}
 
+" Keyboard Mappings {{{
+nmap <Leader>gs :Gstatus<CR>
+nmap <Leader>gc :Gcommit<CR>
+nmap <Leader>gd :Gdiff<CR>
+nmap <Leader>gl :Glog<CR>
+nnoremap <leader>gp :Git push<CR>
+" }}}
