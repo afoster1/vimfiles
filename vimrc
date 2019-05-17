@@ -67,6 +67,7 @@ if !empty(glob(plug_vim_file))
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-fugitive'
   Plug 'jamessan/vim-gnupg'
+  Plug 'lfv89/vim-interestingwords'
   call plug#end()
 endif
 " }}}
