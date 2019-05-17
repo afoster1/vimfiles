@@ -1,5 +1,10 @@
-set nocompatible " Don't insist on compatibility with vi.
+" vim:fdm=marker
 
+" Initialisation {{{
+set nocompatible " Don't insist on compatibility with vi.
+" }}}
+
+" Helper Functions {{{
 """ Helpers
 function! EnsureDirExists (dir)
   if !isdirectory(a:dir)
@@ -10,8 +15,10 @@ function! EnsureDirExists (dir)
     endif
   endif
 endfunction
+" }}}
 
-""" Bootstrap "junegunn/vim-plug"
+" Bootstrap Plugin Manager (vim-plug) {{{
+" See "junegunn/vim-plug"
 if has('win32') || has('win64')
   let plug_vim_home=expand('$HOME/vimfiles/pvbundle')
   let plug_vim_dir=expand('$HOME/vimfiles/autoload')
@@ -34,11 +41,13 @@ if empty(glob(plug_vim_file))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 endif
+" }}}
 
-""" Load vim-plug plugins
+" Load Plugins {{{
 if !empty(glob(plug_vim_file))
   call plug#begin(plug_vim_home)
   Plug 'tpope/vim-sensible'
   call plug#end()
 endif
+" }}}
 
