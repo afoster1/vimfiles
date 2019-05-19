@@ -46,6 +46,11 @@ filetype indent on
 set nohlsearch
 set incsearch
 
+" Vim is a little surly, beeping at you at every chance. You can either
+" find a way to turn off the bell completely, or more usefully, make the bell
+" visual.
+set visualbell
+
 " }}}
 
 " FixTerminal Function {{{
