@@ -9,4 +9,8 @@
 " an xterm, by default it inherits the terminal's current title.
 set title
 
+" The 'Press ENTER or type command to continue' prompt is annoying and easily
+" avoided if the command-line text is shortened.
+set shortmess=atI
+
 " }}}
