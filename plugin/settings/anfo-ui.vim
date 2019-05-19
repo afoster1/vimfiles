@@ -78,4 +78,34 @@ if exists("+showtabline")
     set tabline=%!MyTabLine()
 endif
 
+" Make it possible to toggle the state of cursor line & column
+" highlighting. (aka. cross-hair cursor locator).
+let g:crosshairState = 0
+function! s:toggleCrosshair()
+    if g:crosshairState == 0
+        let g:crosshairState=1
+        set cursorline
+        set cursorcolumn
+    elseif g:crosshairState == 1
+        let g:crosshairState=2
+        set cursorline
+        set nocursorcolumn
+    elseif g:crosshairState == 2
+        let g:crosshairState=3
+        set nocursorline
+        set cursorcolumn
+    elseif g:crosshairState == 3
+        let g:crosshairState=0
+        set nocursorline
+        set nocursorcolumn
+    endif
+endfunction
+function! s:resetCrosshair()
+    let g:crosshairState=0
+    set nocursorline
+    set nocursorcolumn
+endfunction
+:nnoremap <Leader>x :call <SID>toggleCrosshair()<CR>
+:nnoremap <Leader>X :call <SID>resetCrosshair()<CR>
+
 " }}}
