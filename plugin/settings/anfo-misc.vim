@@ -83,6 +83,10 @@ else
   nmap <Leader>APC :let @*=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
 endif
 
+" Make a shortcut to remove "^M" characters from a buffer.
+nnoremap <Leader>am :execute "%s/\r//g"<CR>
+nnoremap <Leader>AM :execute "%s/\r/\r/g"<CR>
+
 " }}}
 
 " FixTerminal Function {{{
