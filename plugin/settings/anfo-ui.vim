@@ -13,4 +13,9 @@ set title
 " avoided if the command-line text is shortened.
 set shortmess=atI
 
+" Change the behaviour of the "quickfix" windows so that <Return> to
+" select an item uses an existing tab if it is already open, or a new tab if
+" not
+set switchbuf+=usetab,newtab
+
 " }}}
