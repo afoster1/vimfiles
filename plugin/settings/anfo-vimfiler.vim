@@ -2,8 +2,8 @@
 
 " 'vimfiler' plugin integration {{{
 
-:nnoremap - :VimFilerExplorer -toggle<CR>
-:nnoremap <Leader>- :VimFilerCurrentDir -toggle<CR>
+:nnoremap - :VimFilerCurrentDir -toggle<CR>
+:nnoremap <Leader>- :VimFilerExplorer -toggle<CR>
 
 " }}}
 
