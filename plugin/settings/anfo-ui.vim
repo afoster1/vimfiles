@@ -18,4 +18,8 @@ set shortmess=atI
 " not
 set switchbuf+=usetab,newtab
 
+" Ensure the fill characters used for window separators are not invisible...
+" this shouldn't be so by default, but can't be relied upon.
+set fillchars=stl:=,stlnc:-,vert:\|,fold:-,diff:-
+
 " }}}
