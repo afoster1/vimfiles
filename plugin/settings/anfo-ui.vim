@@ -22,6 +22,12 @@ set switchbuf+=usetab,newtab
 " this shouldn't be so by default, but can't be relied upon.
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-,diff:-
 
+" Setup window management key mappings.
+map <c-h> <c-w><
+map <c-l> <c-w>>
+map <c-k> <c-w>+
+map <c-j> <c-w>-
+
 " Setup the tab bar as preferred.
 set showtabline=1
 " Rename tabs to show tab# and # of viewports
