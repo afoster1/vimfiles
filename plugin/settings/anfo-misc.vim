@@ -51,6 +51,9 @@ set incsearch
 " visual.
 set visualbell
 
+" Intuitive backspacing in insert mode.
+set backspace=indent,eol,start
+
 " }}}
 
 " FixTerminal Function {{{
