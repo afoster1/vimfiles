@@ -58,6 +58,31 @@ set backspace=indent,eol,start
 set listchars=tab:>-,trail:.,eol:$
 nmap <silent> <leader><CR> :set nolist!<CR>
 
+" Enable changing the current local directory to that of the current file.
+:nnoremap <leader>cd :cd %:p:h:gs/ /\\ /<CR>
+
+" Support yanking the current buffers filename to the clipboard register.
+nmap <Leader>af :let @*=expand("%")<CR>
+nmap <Leader>AF :let @*=expand("%:p")<CR>
+nmap <Leader>ap :let @*=expand("%:h")<CR>
+nmap <Leader>AP :let @*=expand("%:p:h")<CR>
+" Variants of the above if it's necessary to obtain the paths converted to
+" alternate OS.  This can be useful eg. when on windows and needing to
+" interact with unix based tools etc.
+if has('win32') || has('win64')
+  " Convert back slashes to forward slashes on Windows.
+  nmap <Leader>afc :let @*=substitute(expand("%"), "\\", "/", "g")<CR>
+  nmap <Leader>AFC :let @*=substitute(expand("%:p"), "\\", "/", "g")<CR>
+  nmap <Leader>apc :let @*=substitute(expand("%:h"), "\\", "/", "g")<CR>
+  nmap <Leader>APC :let @*=substitute(expand("%:p:h"), "\\", "/", "g")<CR>
+else
+  " Convert forward slashes to back slashes on linux.
+  nmap <Leader>afc :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+  nmap <Leader>AFC :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+  nmap <Leader>apc :let @*=substitute(expand("%:h"), "/", "\\", "g")<CR>
+  nmap <Leader>APC :let @*=substitute(expand("%:p:h"), "/", "\\", "g")<CR>
+endif
+
 " }}}
 
 " FixTerminal Function {{{
