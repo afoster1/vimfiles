@@ -54,6 +54,10 @@ set visualbell
 " Intuitive backspacing in insert mode.
 set backspace=indent,eol,start
 
+" The following will make tabs and trailing spaces visible when requested.
+set listchars=tab:>-,trail:.,eol:$
+nmap <silent> <leader><CR> :set nolist!<CR>
+
 " }}}
 
 " FixTerminal Function {{{
