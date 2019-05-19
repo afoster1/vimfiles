@@ -22,4 +22,60 @@ set switchbuf+=usetab,newtab
 " this shouldn't be so by default, but can't be relied upon.
 set fillchars=stl:=,stlnc:-,vert:\|,fold:-,diff:-
 
+" Setup the tab bar as preferred.
+set showtabline=1
+" Rename tabs to show tab# and # of viewports
+if exists("+showtabline")
+    function! MyTabLine()
+        let s = ''
+        let s .= '%#TabLineFill#' " Start off with empty Highlighting
+
+        for i in range(tabpagenr('$')) " Process each tab that exists
+            let curtabnr = tabpagenr()
+            let tabnr = i+1 " range() is zero based.
+            let winnr = tabpagewinnr(tabnr) " gets the current window of the current tab.
+            let nrwins = tabpagewinnr(tabnr, '$') " gets the number of windows in the current tab.
+            let buflist = tabpagebuflist(tabnr) " gets a list of buffers associated with the windows in the current tab.
+            let bufnr = buflist[winnr - 1] " current buffer number
+            let bufname = bufname(bufnr) " gets the name of the current buffer in the current window of the current tab
+            let buftype = getbufvar(bufnr, 'buftype') " Establish the type of buffer.
+
+            let s .= '%' . tabnr  . 'T' " Start a tab
+            let s .= (tabnr==curtabnr ? '%#TabLineSel#' : '%#TabLine#') " Set the correct highlight
+            let s .= bufnr " Add the buffer number
+            if nrwins > 1 " Add the current window number.
+                let s .= '+'
+            end
+
+            let tabname = bufname " Work out an appropriate tab name.
+            if buftype == 'nofile'
+                if tabname +~ '\/.'
+                    let tabname = substitute(tabname, '.*\/\ze.', '', '')
+                endif
+            else
+                let tabname = fnamemodify(tabname, ':p:t')
+            endif
+            if tabname == ''
+                let tabname = '[None]'
+            endif
+            let s .= ' '
+            let s .= tabname
+
+            let bufmodified = getbufvar(bufnr, "&mod") " has the buffer been changed?
+            if bufmodified
+                let s .= '+'
+            endif
+
+            let s .= '%#TabLineFill#' " Include a gap between the tabs
+            let s .= ' '
+        endfor
+
+        let s .= '%=' " seperate left-aligned from right-aligned
+        let s .= '%#TabLine#' " set highlight for the 'X' below
+        let s .= '%999XX' " places an 'X' at the far-right
+        return s
+    endfunction
+    set tabline=%!MyTabLine()
+endif
+
 " }}}
