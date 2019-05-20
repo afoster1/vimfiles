@@ -87,6 +87,33 @@ endif
 nnoremap <Leader>am :execute "%s/\r//g"<CR>
 nnoremap <Leader>AM :execute "%s/\r/\r/g"<CR>
 
+
+" Setup the 'boxes' tool to support comment etc. using unimpaired style.
+autocmd BufEnter * nmap [ac !!boxes -d boxquote<CR>
+autocmd BufEnter * vmap [ac !boxes -d boxquote<CR>
+autocmd BufEnter * nmap ]ac !!boxes -d boxquote -r<CR>
+autocmd BufEnter * vmap ]ac !boxes -d  boxquote -r<CR>
+
+autocmd BufEnter *.[chly],*.[pc]c nmap [ac !!boxes -d c-cmt<CR>
+autocmd BufEnter *.[chly],*.[pc]c vmap [ac !boxes -d c-cmt<CR>
+autocmd BufEnter *.[chly],*.[pc]c nmap ]ac !!boxes -d c-cmt -r<CR>
+autocmd BufEnter *.[chly],*.[pc]c vmap ]ac !boxes -d c-cmt -r<CR>
+
+autocmd BufEnter *.C,*.cpp,*.cs,*.java nmap [ac !!boxes -d java-cmt<CR>
+autocmd BufEnter *.C,*.cpp,*.cs,*.java vmap [ac !boxes -d java-cmt<CR>
+autocmd BufEnter *.C,*.cpp,*.cs,*.java nmap ]ac !!boxes -d java-cmt -r<CR>
+autocmd BufEnter *.C,*.cpp,*.cs,*.java vmap ]ac !boxes -d java-cmt -r<CR>
+
+autocmd BufEnter *.C,*.cpp,*.cs,*.java nmap [ac !!boxes -d java-cmt<CR>
+autocmd BufEnter *.C,*.cpp,*.cs,*.java vmap [ac !boxes -d java-cmt<CR>
+autocmd BufEnter *.C,*.cpp,*.cs,*.java nmap ]ac !!boxes -d java-cmt -r<CR>
+autocmd BufEnter *.C,*.cpp,*.cs,*.java vmap ]ac !boxes -d java-cmt -r<CR>
+
+autocmd BufEnter .vimrc*,.exrc nmap [ac !!boxes -d vim-cmt<CR>
+autocmd BufEnter .vimrc*,.exrc vmap [ac !boxes -d vim-cmt<CR>
+autocmd BufEnter .vimrc*,.exrc nmap ]ac !!boxes -d vim-cmt -r<CR>
+autocmd BufEnter .vimrc*,.exrc vmap ]ac !boxes -d vim-cmt -r<CR>
+
 " }}}
 
 " FixTerminal Function {{{
