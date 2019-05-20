@@ -81,6 +81,7 @@ if !empty(glob(plug_vim_file))
   Plug 'mhinz/vim-signify'
   Plug 'airblade/vim-gitgutter'
   Plug 'reedes/vim-thematic'
+  Plug 'easymotion/vim-easymotion'
   call plug#end()
 endif
 " }}}
