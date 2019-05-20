@@ -66,6 +66,7 @@ if !empty(glob(plug_vim_file))
   call plug#begin(plug_vim_home)
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-git'
   Plug 'jamessan/vim-gnupg'
   Plug 'lfv89/vim-interestingwords'
   Plug 'Shougo/unite.vim'
