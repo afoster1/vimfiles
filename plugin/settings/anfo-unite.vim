@@ -47,7 +47,6 @@ noremap <leader>/gc :call SetUniteSourceMaxCandidates('grep')<CR>
 let g:unite_source_history_yank_enable = 1
 noremap <leader>/y :Unite -direction=dynamicbottom -multi-line -buffer-name=history -start-insert history/yank<CR>
 noremap <leader>/t :Unite -direction=dynamicbottom -multi-line -buffer-name=tags -create -auto-highlight -no-quit -start-insert tag<CR>
-noremap <leader>/o :Unite -direction=dynamicbottom -multi-line -buffer-name=outline -create -auto-highlight -no-quit -start-insert outline<CR>
 noremap <leader>/h :Unite -direction=dynamicbottom -multi-line -buffer-name=help -start-insert help<CR>
 noremap <leader>/m :Unite -direction=dynamicbottom -multi-line -buffer-name=man -start-insert manpage<CR>
 noremap <leader>/q :Unite -direction=dynamicbottom -multi-line -buffer-name=quickfix -create -auto-highlight -no-quit -start-insert qf<CR>
@@ -56,3 +55,12 @@ noremap <leader>/p :Unite -direction=dynamicbottom -multi-line -buffer-name=proc
 
 " }}}
 
+" h1mesuke/unite-outline Integration {{{
+
+let g:unite_data_directory = $HOME . '/.cache/unite'
+let g:unite_abbr_highlight = 'normal'
+call EnsureDirExists(g:unite_data_directory)
+
+noremap <leader>/o :Unite -direction=dynamicbottom -multi-line -buffer-name=outline -create -auto-highlight -no-quit -start-insert outline<CR>
+
+" }}}
