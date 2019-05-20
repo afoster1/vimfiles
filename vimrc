@@ -79,6 +79,7 @@ if !empty(glob(plug_vim_file))
   Plug 'Shougo/vinarise.vim'
   Plug 'majutsushi/tagbar'
   Plug 'mhinz/vim-signify'
+  Plug 'airblade/vim-gitgutter'
   call plug#end()
 endif
 " }}}
