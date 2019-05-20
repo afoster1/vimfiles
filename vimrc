@@ -85,6 +85,7 @@ if !empty(glob(plug_vim_file))
   Plug 'kana/vim-textobj-user'
   Plug 'reedes/vim-textobj-sentence'
   Plug 'bling/vim-airline'
+  Plug 'gregsexton/gitv'
   call plug#end()
 endif
 " }}}
