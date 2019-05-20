@@ -118,6 +118,9 @@ autocmd BufEnter .vimrc*,.exrc vmap ]ac !boxes -d vim-cmt -r<CR>
 imap <Leader>as <C-o>:setlocal spell! spelllang=en_gb<CR>
 nmap <Leader>as :setlocal spell! spelllang=en_gb<CR>
 
+" Support xaml file editing.
+au BufNewFile,BufRead *.xaml setf xml
+
 " }}}
 
 " FixTerminal Function {{{
