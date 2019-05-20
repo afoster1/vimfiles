@@ -89,6 +89,7 @@ if !empty(glob(plug_vim_file))
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-dispatch'
   call plug#end()
 endif
 " }}}
