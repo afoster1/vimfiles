@@ -114,6 +114,10 @@ autocmd BufEnter .vimrc*,.exrc vmap [ac !boxes -d vim-cmt<CR>
 autocmd BufEnter .vimrc*,.exrc nmap ]ac !!boxes -d vim-cmt -r<CR>
 autocmd BufEnter .vimrc*,.exrc vmap ]ac !boxes -d vim-cmt -r<CR>
 
+" Setup a shortcut to toggle spelling on & off
+imap <Leader>as <C-o>:setlocal spell! spelllang=en_gb<CR>
+nmap <Leader>as :setlocal spell! spelllang=en_gb<CR>
+
 " }}}
 
 " FixTerminal Function {{{
