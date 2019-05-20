@@ -93,6 +93,7 @@ if !empty(glob(plug_vim_file))
   Plug 'tpope/vim-dispatch'
   Plug 'tomtom/tcomment_vim'
   Plug 'schickling/vim-bufonly'
+  Plug 'Townk/vim-autoclose'
   call plug#end()
 endif
 " }}}
