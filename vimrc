@@ -94,6 +94,7 @@ if !empty(glob(plug_vim_file))
   Plug 'tomtom/tcomment_vim'
   Plug 'schickling/vim-bufonly'
   Plug 'Townk/vim-autoclose'
+  Plug 'MattesGroeger/vim-bookmarks'
   call plug#end()
 endif
 " }}}
