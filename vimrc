@@ -91,6 +91,7 @@ if !empty(glob(plug_vim_file))
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-dispatch'
+  Plug 'tomtom/tcomment_vim'
   call plug#end()
 endif
 " }}}
