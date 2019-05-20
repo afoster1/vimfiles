@@ -82,6 +82,8 @@ if !empty(glob(plug_vim_file))
   Plug 'airblade/vim-gitgutter'
   Plug 'reedes/vim-thematic'
   Plug 'easymotion/vim-easymotion'
+  Plug 'kana/vim-textobj-user'
+  Plug 'reedes/vim-textobj-sentence'
   call plug#end()
 endif
 " }}}
