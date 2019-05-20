@@ -86,6 +86,7 @@ if !empty(glob(plug_vim_file))
   Plug 'reedes/vim-textobj-sentence'
   Plug 'bling/vim-airline'
   Plug 'gregsexton/gitv'
+  Plug 'tpope/vim-abolish'
   call plug#end()
 endif
 " }}}
