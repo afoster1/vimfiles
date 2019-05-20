@@ -121,6 +121,16 @@ nmap <Leader>as :setlocal spell! spelllang=en_gb<CR>
 " Support xaml file editing.
 au BufNewFile,BufRead *.xaml setf xml
 
+" Use easier help navigation
+:au filetype help :nnoremap <buffer> <CR> <c-]>
+:au filetype help :nnoremap <buffer> - <c-T>
+:au filetype help :nnoremap <buffer> <DEL> <c-T>
+:au filetype help :nnoremap <buffer> <BS> <c-T>
+:au filetype help :nnoremap <buffer> o /'\l\{2,\}'<CR>
+:au filetype help :nnoremap <buffer> O ?'\l\{2,\}'<CR>
+:au filetype help :nnoremap <buffer> s /<Bar>\zs\k*\ze<Bar><CR>
+:au filetype help :nnoremap <buffer> S ?<Bar>\zs\k*\ze<Bar><CR>
+
 " }}}
 
 " FixTerminal Function {{{
