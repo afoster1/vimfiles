@@ -80,6 +80,7 @@ if !empty(glob(plug_vim_file))
   Plug 'majutsushi/tagbar'
   Plug 'mhinz/vim-signify'
   Plug 'airblade/vim-gitgutter'
+  Plug 'reedes/vim-thematic'
   call plug#end()
 endif
 " }}}
