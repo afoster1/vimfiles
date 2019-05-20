@@ -92,6 +92,7 @@ if !empty(glob(plug_vim_file))
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-dispatch'
   Plug 'tomtom/tcomment_vim'
+  Plug 'schickling/vim-bufonly'
   call plug#end()
 endif
 " }}}
