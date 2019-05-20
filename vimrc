@@ -88,6 +88,7 @@ if !empty(glob(plug_vim_file))
   Plug 'gregsexton/gitv'
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-unimpaired'
   call plug#end()
 endif
 " }}}
