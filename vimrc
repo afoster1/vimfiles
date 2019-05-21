@@ -102,21 +102,15 @@ endif
 " }}}
 
 " Keyboard Mappings {{{
-" g
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gc :Gcommit<CR>
-nmap <Leader>gd :Gdiff<CR>
-nmap <Leader>gl :Glog<CR>
-nnoremap <leader>gp :Git push<CR>
-" q
+
 nmap <Leader>q :xa<CR>
-" s
 nmap <Leader>s :wa<CR>
 nmap <Leader>S :SSave<CR>
-" t
 nmap <Leader>t :tabnew<CR>
 nmap <Leader>h :tabprevious<CR>
 nmap <Leader>l :tabnext<CR>
 nmap <Leader>j :execute TabLeft()<CR>
 nmap <Leader>k :execute TabRight()<CR>
+
 " }}}
+
