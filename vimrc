@@ -96,6 +96,7 @@ if !empty(glob(plug_vim_file))
   Plug 'Townk/vim-autoclose'
   Plug 'MattesGroeger/vim-bookmarks'
   Plug 'myusuf3/numbers.vim'
+  Plug 'vim-scripts/vcscommand.vim'
   call plug#end()
 endif
 " }}}
