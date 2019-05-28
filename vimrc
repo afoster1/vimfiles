@@ -68,7 +68,6 @@ if !empty(glob(plug_vim_file))
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-git'
   Plug 'jamessan/vim-gnupg'
-  Plug 'lfv89/vim-interestingwords'
   Plug 'inkarkat/vim-ingo-library'
   Plug 'inkarkat/vim-mark'
   Plug 'Shougo/unite.vim'
