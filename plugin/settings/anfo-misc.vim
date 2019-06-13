@@ -2,6 +2,10 @@
 
 " General vim configuration {{{
 
+" Disable modeline (security hazard)
+set modelines=0
+set nomodeline
+
 " Setup tab widths correctly. etc.
 :set expandtab
 :set shiftwidth=4
