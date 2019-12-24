@@ -232,3 +232,19 @@ command! -nargs=? -range=% Tab2Space call IndentConvert(<line1>,<line2>,1,<q-arg
 command! -nargs=? -range=% FixWhitespace call IndentConvert(<line1>,<line2>,&et,<q-args>,1)
 
  " }}}
+
+" 39. Open Listed Files Function {{{
+" Facilitates command line searching, collect a list of files in vim, then
+" open them all.
+command! -range=% OpenListedFiles <line1>,<line2>call OpenListedFiles()
+
+function! OpenListedFiles() range
+    let FileList = getline(a:firstline, a:lastline)
+    for filename in FileList
+        if filereadable(filename)
+            exe 'tabedit' filename
+        endif
+    endfor
+endfunction
+
+" }}}
