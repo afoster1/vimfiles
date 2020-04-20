@@ -114,4 +114,28 @@ endfunction
 :nnoremap <Leader>x :call <SID>toggleCrosshair()<CR>
 :nnoremap <Leader>X :call <SID>resetCrosshair()<CR>
 
+" Ensure cursor style switches between block & I-bar, especially when being
+" used via tmux & mintty terminal sessions on Windows.
+" Note: Comments suggest i should be able to check "exists('$TMUX')" to see
+" that the session is running within tmux.  This didnt work for me... so its
+" left as a manual operation instead.
+" Note2: Cursor styles are
+"  1 -> blinking block
+"  2 -> solid block 
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+function! FixCursorTmux()
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\" " Insert Mode
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\e[1 q\<Esc>\\" " Normal Mode
+endfunction
+command! FixCursorTmux call FixCursorTmux()
+
+function! FixCursor()
+    let &t_SI = "\<Esc>[5 q" " Insert Mode
+    let &t_EI = "\<Esc>[1 q" " Normal Mode
+endfunction
+command! FixCursor call FixCursor()
+
 " }}}
