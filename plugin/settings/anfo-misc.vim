@@ -135,6 +135,10 @@ au BufNewFile,BufRead *.xaml setf xml
 :au filetype help :nnoremap <buffer> s /<Bar>\zs\k*\ze<Bar><CR>
 :au filetype help :nnoremap <buffer> S ?<Bar>\zs\k*\ze<Bar><CR>
 
+" Allow the cursor to move beyond the end of a line, which is useful when
+" creating tables.
+set virtualedit=all
+
 " }}}
 
 " FixTerminal Function {{{
