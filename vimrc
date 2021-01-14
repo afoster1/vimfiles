@@ -86,7 +86,8 @@ if !empty(glob(plug_vim_file))
   Plug 'easymotion/vim-easymotion'
   Plug 'kana/vim-textobj-user'
   Plug 'reedes/vim-textobj-sentence'
-  Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'gregsexton/gitv'
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-surround'
@@ -98,6 +99,7 @@ if !empty(glob(plug_vim_file))
   Plug 'MattesGroeger/vim-bookmarks'
   Plug 'myusuf3/numbers.vim'
   Plug 'vim-scripts/vcscommand.vim'
+  Plug 'altercation/vim-colors-solarized'
   call plug#end()
 endif
 " }}}
