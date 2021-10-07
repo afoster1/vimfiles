@@ -100,6 +100,7 @@ if !empty(glob(plug_vim_file))
   Plug 'myusuf3/numbers.vim'
   Plug 'vim-scripts/vcscommand.vim'
   Plug 'altercation/vim-colors-solarized'
+  Plug 'mechatroner/rainbow_csv'
   call plug#end()
 endif
 " }}}
