@@ -102,7 +102,6 @@ let g:window_rows_s_x = 999
 let g:window_rows_s_l = 110
 let g:window_rows_s_m = 81
 let g:window_rows_s_s = 52
-let g:thematic#theme_name = 'dark_term'
 let g:thematic#defaults = {
 \   'typeface': 'Source Code Pro',
 \   'font-size': g:font_m,

@@ -82,7 +82,7 @@ if !empty(glob(plug_vim_file))
   Plug 'majutsushi/tagbar'
   Plug 'mhinz/vim-signify'
   Plug 'airblade/vim-gitgutter'
-  Plug 'reedes/vim-thematic'
+  Plug 'preservim/vim-thematic'
   Plug 'easymotion/vim-easymotion'
   Plug 'kana/vim-textobj-user'
   Plug 'reedes/vim-textobj-sentence'
