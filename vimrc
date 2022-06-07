@@ -101,6 +101,8 @@ if !empty(glob(plug_vim_file))
   Plug 'vim-scripts/vcscommand.vim'
   Plug 'altercation/vim-colors-solarized'
   Plug 'mechatroner/rainbow_csv'
+  Plug 'junegunn/fzf'
+  Plug 'junegunn/fzf.vim'
   call plug#end()
 endif
 " }}}
