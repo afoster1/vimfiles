@@ -2,10 +2,10 @@
 
 " 'tpope/vim-fugitive' plugin integration {{{
 
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gc :Gcommit<CR>
+nmap <Leader>gs :Git<CR>
+nmap <Leader>gc :Git commit<CR>
 nmap <Leader>gd :Gdiff<CR>
-nmap <Leader>gl :Glog<CR>
+nmap <Leader>gl :Gclog<CR>
 nnoremap <leader>gp :Git push<CR>
 
 " }}}
