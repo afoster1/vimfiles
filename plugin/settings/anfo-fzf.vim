@@ -57,4 +57,20 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+" Setup actions and include a way to copy results to the clipboard
+function! s:copy_results(lines)
+    let joined_lines = join(a:lines, "\n")
+    if len(a:lines) > 1
+        let joined_lines .= "\n"
+    endif
+    let @+ = joined_lines
+endfunction
+let g:fzf_action =
+    \ {
+    \   'ctrl-t': 'tab split',
+    \   'ctrl-x': 'split',
+    \   'ctrl-v': 'vsplit',
+    \   'ctrl-y': function('s:copy_results')
+    \ }
+
 " }}}
