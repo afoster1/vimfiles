@@ -1,8 +1,12 @@
 " vim:fdm=marker
 
-" Initialisation {{{
-set nocompatible " Don't insist on compatibility with vi.
-" }}}
+" Don't insist on compatibility with vi.
+set nocompatible
+
+" Keyboard Mappings
+nmap <Leader>q :xa<CR>
+nmap <Leader>s :wa<CR>
+nmap <Leader>S :SSave<CR>
 
 " Helper Functions {{{
 function! EnsureDirExists (dir)
@@ -79,12 +83,3 @@ if !empty(glob(plug_vim_file))
   call plug#end()
 endif
 " }}}
-
-" Keyboard Mappings {{{
-
-nmap <Leader>q :xa<CR>
-nmap <Leader>s :wa<CR>
-nmap <Leader>S :SSave<CR>
-
-" }}}
-
