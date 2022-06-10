@@ -85,7 +85,6 @@ endif
 nmap <Leader>q :xa<CR>
 nmap <Leader>s :wa<CR>
 nmap <Leader>S :SSave<CR>
-nmap <Leader>t :tabnew<CR>
 
 " }}}
 

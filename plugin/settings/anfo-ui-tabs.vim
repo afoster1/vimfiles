@@ -27,5 +27,6 @@ nmap <Leader>h :tabprevious<CR>
 nmap <Leader>l :tabnext<CR>
 nmap <Leader>j :execute TabLeft()<CR>
 nmap <Leader>k :execute TabRight()<CR>
+nmap <Leader>t :tabnew<CR>
 
 " }}}
