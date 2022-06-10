@@ -84,6 +84,11 @@ if exists("+showtabline")
     set tabline=%!MyTabLine()
 endif
 
+" Always show the status line & 'unimpaired' style key to switch it on/off.
+set laststatus=2
+nnoremap [ab :set laststatus=2<CR>
+nnoremap ]ab :set laststatus=0<CR>
+
 " Make it possible to toggle the state of cursor line & column
 " highlighting. (aka. cross-hair cursor locator).
 let g:crosshairState = 0
