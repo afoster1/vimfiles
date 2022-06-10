@@ -164,16 +164,10 @@ function! FixTerminal()
         endif
 
         if has("gui_win32") || has("gui_win32s")
-            set guifont=Consolas:h8
-            set enc=utf-8
+            set guifont=Consolas:h11
         endif
-
-        set t_Co=256
-        set guitablabel=%M%t
-        set background=dark
-        colorscheme xterm16
     else
-        " dont load csapprox if there is no gui support - silences an annoying warning
+        " Dont load csapprox if there is no gui support - silences an annoying warning
         let g:CSApprox_loaded = 1
 
         if $TERM == 'xterm'
@@ -188,12 +182,16 @@ function! FixTerminal()
             " Neither custom colorschemes work well in cygwin
             " (aka. git for windows)
             set term=win32
-            set background=dark
             colorscheme default
         endif
     endif
     set number
     set mouse=a
+
+    " It's recommended to always put set encoding=utf-8 in your vimrc. It
+    " automatically enables saner encoding detection settings for
+    " 'fileencodings' and supports any characters that you'll need to store.
+    set encoding=utf-8
 endfunction
 call FixTerminal()
 
