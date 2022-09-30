@@ -91,7 +91,6 @@ endif
 nnoremap <Leader>am :execute "%s/\r//g"<CR>
 nnoremap <Leader>AM :execute "%s/\r/\r/g"<CR>
 
-
 " Setup the 'boxes' tool to support comment etc. using unimpaired style.
 autocmd BufEnter * nmap [ac !!boxes -d boxquote<CR>
 autocmd BufEnter * vmap [ac !boxes -d boxquote<CR>
@@ -121,6 +120,10 @@ autocmd BufEnter .vimrc*,.exrc vmap ]ac !boxes -d vim-cmt -r<CR>
 " Setup a shortcut to toggle spelling on & off
 imap <Leader>as <C-o>:setlocal spell! spelllang=en_gb<CR>
 nmap <Leader>as :setlocal spell! spelllang=en_gb<CR>
+
+" Setup an 'unimpaired' style shortcut to switch to relative line numbering.
+nnoremap [an :set relativenumber<CR>
+nnoremap ]an :set norelativenumber<CR>
 
 " Support xaml file editing.
 au BufNewFile,BufRead *.xaml setf xml
