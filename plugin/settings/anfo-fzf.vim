@@ -5,6 +5,12 @@
 " Use a command prefix, to find them easily.
 let g:fzf_command_prefix = 'Fzf'
 
+" Preferred grep command
+set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
+
+" Use the current working directory
+ let g:rg_derive_root='true'
+
 " Preferred git commit formatting.
 let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
 
