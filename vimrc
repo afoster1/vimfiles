@@ -68,6 +68,7 @@ if !empty(glob(plug_vim_file))
   Plug 'mhinz/vim-signify'
   Plug 'preservim/vim-thematic'
   Plug 'reedes/vim-textobj-sentence'
+  Plug 'rafi/awesome-vim-colorschemes'
   Plug 'schickling/vim-bufonly'
   Plug 'tomtom/tcomment_vim'
   Plug 'tpope/vim-abolish'
