@@ -16,6 +16,8 @@ nnoremap <F2> :call SetThemeFontSize(g:font_size + 1)<CR>
 " 'unimpaired' style key to switch the lights on/off.
 nnoremap [al :call SetThemeName('light')<CR>
 nnoremap ]al :call SetThemeName('dark')<CR>
+nnoremap {AL :call SetThemeName('altlight')<CR>
+nnoremap }AL :call SetThemeName('altdark')<CR>
 
 " Load/Reload Thematic's theme definitions
 function! s:loadThemes()
@@ -27,6 +29,16 @@ function! s:loadThemes()
         \ }
 
     let g:thematic#themes = {
+        \ 'altlight'  :
+        \   {
+        \       'colorscheme': 'materialbox',
+        \       'background': 'light'
+        \   },
+        \ 'altdark'  :
+        \   {
+        \       'colorscheme': 'materialbox',
+        \       'background': 'dark'
+        \   },
         \ 'dark'  :
         \   {
         \       'colorscheme': 'solarized',
