@@ -55,6 +55,7 @@ if !empty(glob(plug_vim_file))
   Plug 'altercation/vim-colors-solarized'
   Plug 'easymotion/vim-easymotion'
   Plug 'gregsexton/gitv'
+  Plug 'ludovicchabant/vim-gutentags'
   Plug 'inkarkat/vim-ingo-library'
   Plug 'inkarkat/vim-mark'
   Plug 'jamessan/vim-gnupg'
