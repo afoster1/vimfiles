@@ -253,3 +253,40 @@ function! OpenListedFiles() range
 endfunction
 
 " }}}
+
+" 40. Change To Project Root Function {{{
+function! FindProjectRoot(sentinels)
+    let l:path = fnamemodify(expand('%'), ':p')
+    while 1
+        let l:lastPath = l:path
+        let l:path = fnamemodify(l:path, ':h')
+
+        " stop if in home dir ('~') or root
+        if l:path == expand('$HOME') || l:path == l:lastPath
+            let l:path = fnamemodify(expand('%'), ':p:h')
+            return l:path
+        endif
+
+        for sentinel in a:sentinels
+            let l:fn = l:path . '/' . sentinel
+            if filereadable(fn) || isdirectory(fn)
+                return l:path
+            endif
+        endfor
+    endwhile
+endfunction
+
+let g:projectRootSentinels = ['.projectroot', '.git', '.hg', '.bzr', '.svn']
+function! ChangeToProjectRoot()
+    try
+        let l:rootDir = FindProjectRoot(g:projectRootSentinels)
+        if strlen(l:rootDir)
+            execute ':cd' fnameescape(l:rootDir)
+        endif
+    catch
+    endtry
+endfunction
+
+" Enable changing the current local directory to that of the project root.
+:nnoremap <leader>cdr :call ChangeToProjectRoot()<CR>
+" }}}
