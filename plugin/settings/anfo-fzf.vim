@@ -31,8 +31,8 @@ let g:fzf_layout = { 'window': '-tabnew' }
 " Find filenames keyboard shortcut, simulates ctrlp plugin
 nnoremap <C-p> :FzfFiles<Cr>
 
-" Using "silversearcher" search filenames and content.
-nnoremap <C-g> :FzfAg<Cr>
+" Using "ripgrep" search filenames and content.
+nnoremap <C-g> :FzfRg<Cr>
 
 " Find open buffers
 nnoremap <silent><leader>b :FzfBuffers<CR>
