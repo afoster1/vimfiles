@@ -276,7 +276,7 @@ function! FindProjectRoot(anchors)
     endwhile
 endfunction
 
-let g:projectRootAnchors = ['tags', '.projectroot', '.git', '.hg', '.bzr', '.svn']
+let g:projectRootAnchors = ['tags', 'tags.lock', '.projectroot', '.git', '.hg', '.bzr', '.svn']
 function! ChangeToProjectRoot()
     try
         let l:rootDir = FindProjectRoot(g:projectRootAnchors)
