@@ -255,7 +255,7 @@ endfunction
 " }}}
 
 " 40. Change To Project Root Function {{{
-function! FindProjectRoot(sentinels)
+function! FindProjectRoot(anchors)
     let l:path = fnamemodify(expand('%'), ':p')
     while 1
         let l:lastPath = l:path
@@ -267,8 +267,8 @@ function! FindProjectRoot(sentinels)
             return l:path
         endif
 
-        for sentinel in a:sentinels
-            let l:fn = l:path . '/' . sentinel
+        for anchor in a:anchors
+            let l:fn = l:path . '/' . anchor
             if filereadable(fn) || isdirectory(fn)
                 return l:path
             endif
@@ -276,10 +276,10 @@ function! FindProjectRoot(sentinels)
     endwhile
 endfunction
 
-let g:projectRootSentinels = ['.projectroot', '.git', '.hg', '.bzr', '.svn']
+let g:projectRootAnchors = ['tags', '.projectroot', '.git', '.hg', '.bzr', '.svn']
 function! ChangeToProjectRoot()
     try
-        let l:rootDir = FindProjectRoot(g:projectRootSentinels)
+        let l:rootDir = FindProjectRoot(g:projectRootAnchors)
         if strlen(l:rootDir)
             execute ':cd' fnameescape(l:rootDir)
         endif
