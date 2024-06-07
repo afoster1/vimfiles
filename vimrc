@@ -36,6 +36,10 @@ if empty(glob(plug_vim_file))
   " Windows: Get "curl" via msys2 or get "wget" via gnuwin32
   if (executable("curl"))
     silent exec "!curl -sfLo " . plug_vim_file . " --create-dirs " . plug_vim_url
+    " In some environments it will still fail to download, so try bypassing
+    " the certificate revocation check by adding --ssl-no-revoke to the curl
+    " command line. ie.
+    " silent exec "!curl -sfLo " . plug_vim_file . " --create-dirs --ssl-no-revoke " . plug_vim_url
   endif
   if (executable("wget") && empty(glob(plug_vim_file)))
     silent exec "!wget --no-check-certificate -nc -q " . plug_vim_url . " -P " . plug_vim_dir
