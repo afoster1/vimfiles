@@ -41,12 +41,12 @@ function! s:loadThemes()
         \   },
         \ 'dark'  :
         \   {
-        \       'colorscheme': 'solarized',
+        \       'colorscheme': 'solarized8',
         \       'background': 'dark'
         \   },
         \ 'light'  :
         \   {
-        \       'colorscheme': 'solarized',
+        \       'colorscheme': 'solarized8',
         \       'background': 'light'
         \   }
         \ }

@@ -23,11 +23,21 @@ endfunction
 " Bootstrap Plugin Manager (vim-plug) {{{
 " See "junegunn/vim-plug"
 if has('win32') || has('win64')
-  let plug_vim_home=expand('$HOME/vimfiles/pvbundle')
-  let plug_vim_dir=expand('$HOME/vimfiles/autoload')
+  if has('nvim')
+      let plug_vim_home=expand('$HOME/AppData/Local/nvim/pvbundle')
+      let plug_vim_dir=expand('$HOME/AppData/Local/nvim/autoload')
+  else
+      let plug_vim_home=expand('$HOME/vimfiles/pvbundle')
+      let plug_vim_dir=expand('$HOME/vimfiles/autoload')
+  endif
 else
-  let plug_vim_home=expand('~/.vim/pvbundle')
-  let plug_vim_dir=expand('~/.vim/autoload')
+  if has('nvim')
+      let plug_vim_home=expand('~/.config/nvim/pvbundle')
+      let plug_vim_dir=expand('~/.config/nvim/autoload')
+  else
+      let plug_vim_home=expand('~/.vim/pvbundle')
+      let plug_vim_dir=expand('~/.vim/autoload')
+  endif
 endif
 let plug_vim_url="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 let plug_vim_file=expand(plug_vim_dir.'/plug.vim')
@@ -56,7 +66,7 @@ if !empty(glob(plug_vim_file))
   Plug 'MattesGroeger/vim-bookmarks'
   Plug 'Townk/vim-autoclose'
   Plug 'airblade/vim-gitgutter'
-  Plug 'altercation/vim-colors-solarized'
+  Plug 'lifepillar/vim-solarized8'
   Plug 'easymotion/vim-easymotion'
   Plug 'gregsexton/gitv'
   Plug 'ludovicchabant/vim-gutentags'
