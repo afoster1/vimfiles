@@ -18,6 +18,8 @@ nnoremap [al :call SetThemeName('light')<CR>
 nnoremap ]al :call SetThemeName('dark')<CR>
 nnoremap {AL :call SetThemeName('altlight')<CR>
 nnoremap }AL :call SetThemeName('altdark')<CR>
+nnoremap <leader>AL :call SetThemeName('bwlight')<CR>
+nnoremap <leader>al :call SetThemeName('bwdark')<CR>
 
 " Load/Reload Thematic's theme definitions
 function! s:loadThemes()
@@ -47,6 +49,16 @@ function! s:loadThemes()
         \ 'light'  :
         \   {
         \       'colorscheme': 'solarized8',
+        \       'background': 'light'
+        \   },
+        \ 'bwdark'  :
+        \   {
+        \       'colorscheme': '256_noir',
+        \       'background': 'dark'
+        \   },
+        \ 'bwlight'  :
+        \   {
+        \       'colorscheme': 'github',
         \       'background': 'light'
         \   }
         \ }
